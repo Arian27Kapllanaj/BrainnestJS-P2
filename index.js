@@ -162,7 +162,7 @@ function operate(x, y, op) {
         return x * y;
     } else if(op === '/') {
         if(y === 0) {
-            return 'lmao';
+            return 'You cant do that';
         } else {
         return x / y;
         }
