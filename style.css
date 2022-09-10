@@ -1,0 +1,116 @@
+html {
+    text-align: center;
+    font-family: monospace;
+}
+
+#calculator {
+    display: flex;
+    min-height: 95vh;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: azure;
+}
+
+#container {
+    background-color: gray;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+   
+}
+
+#display {
+    grid-column: 1 / -1;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 5.5em;
+    font-weight: initial;
+    text-shadow: 1.3px 1.3px #383838;
+    margin: 5px;
+}
+
+button {
+    margin: 1px;
+    border-radius: 1%;
+    border: none;
+    font-weight: initial;
+    font-size: 2em;
+    font-family: monospace;
+    color: black;
+}
+
+
+#zero {
+    grid-column: span 2;
+}
+
+.operator {
+    background-color: white;    
+}
+
+.operator:focus {
+    background-color: gray;
+}
+
+.equals {
+   background-color: rgb(85, 85, 255);
+    color: white;
+}
+
+.button:hover {
+    background-color: #323330;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+
+.equals:active {
+    background-color: gray;
+}
+
+.operand {
+    background-color: white;
+}
+
+.operand:active {
+    background-color: gray;
+}
+
+.decimal {
+    background-color: white;
+}
+
+.decimal:active {
+    background-color: gray;
+}
+
+.clear {
+    background-color: white;
+}
+
+.clear:active {
+    background-color: gray;
+}
+
+.sign {
+    background-color: white;
+}
+
+.sign:active {
+    background-color: gray;
+}
+
+.percent {
+    background-color: white;
+}
+
+.percent:active {
+    background-color: gray;
+}
