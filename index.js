@@ -1,3 +1,4 @@
+//declaring
 let displayValue = '0';
 let firstOperand = null;
 let secondOperand = null;
@@ -6,11 +7,13 @@ let secondOperator = null;
 let result = null;
 const buttons = document.querySelectorAll('button');
 
+//Keyboard
 window.addEventListener('keydown', function(e){
     const key = document.querySelector(`button[data-key='${e.keyCode}']`);
     key.click();
 });
 
+//Updating the Screen
 function updateScreen() {
     const display = document.getElementById('display');
     display.innerText = displayValue;
@@ -20,6 +23,7 @@ function updateScreen() {
 }
 updateScreen();
 
+//If for every buttons
 function clickButton() {
     for(let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
@@ -49,6 +53,7 @@ function clickButton() {
 
 clickButton();
 
+//Numbers Btns
 function inputOperand(operand) {
     if(firstOperator === null) {
         if(displayValue === '0' || displayValue === 0) {
@@ -67,6 +72,7 @@ function inputOperand(operand) {
     }
 }
 
+//Operators Btns
 function inputOperator(operator) {
     if(firstOperator != null && secondOperator === null) {
         secondOperator = operator;
@@ -88,14 +94,15 @@ function inputOperator(operator) {
     }
 }
 
+//Equal Btn
 function inputEquals() {
     if(firstOperator === null) {
         displayValue = displayValue;
     } else if(secondOperator != null) {
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
-        if(result === 'You cant do that') {
-            displayValue = 'You cant do that';
+        if(result === 'lol') {
+            displayValue = 'lol';
         } else {
             displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
@@ -107,8 +114,8 @@ function inputEquals() {
     } else {
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
-        if(result === 'You cant do that') {
-            displayValue = 'You cant do that';
+        if(result === 'lol') {
+            displayValue = 'lol';
         } else {
             displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
@@ -120,6 +127,7 @@ function inputEquals() {
     }
 }
 
+//Decimals Btn
 function inputDecimal(dot) {
     if(displayValue === firstOperand || displayValue === secondOperand) {
         displayValue = '0';
@@ -129,14 +137,17 @@ function inputDecimal(dot) {
     } 
 }
 
+//Percent Btn
 function inputPercent(num) {
     displayValue = (num/100).toString();
 }
 
+//Sign Btn +/-
 function inputSign(num) {
     displayValue = (num * -1).toString();
 }
 
+//Clear Display
 function clearDisplay() {
     displayValue = '0';
     firstOperand = null;
@@ -146,13 +157,17 @@ function clearDisplay() {
     result = null;
 }
 
+//Working in Progress
+/*
 function inputBackspace() {
     if(firstOperand != null) {
         firstOperand = null;
         updateScreen();
     }
 }
+*/
 
+//Operate Btn
 function operate(x, y, op) {
     if(op === '+') {
         return x + y;
@@ -162,13 +177,14 @@ function operate(x, y, op) {
         return x * y;
     } else if(op === '/') {
         if(y === 0) {
-            return 'You cant do that';
+            return 'lol';
         } else {
         return x / y;
         }
     }
 }
 
+//Rounding
 function roundAccurately(num, places) {
     return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
 }
