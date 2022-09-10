@@ -94,8 +94,8 @@ function inputEquals() {
     } else if(secondOperator != null) {
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
-        if(result === 'lmao') {
-            displayValue = 'lmao';
+        if(result === 'You cant do that') {
+            displayValue = 'You cant do that';
         } else {
             displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
@@ -107,8 +107,8 @@ function inputEquals() {
     } else {
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
-        if(result === 'lmao') {
-            displayValue = 'lmao';
+        if(result === 'You cant do that') {
+            displayValue = 'You cant do that';
         } else {
             displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
